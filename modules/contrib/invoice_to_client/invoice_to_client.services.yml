@@ -1,0 +1,11 @@
+services:
+  invoice_to_client.form.organization_info:
+    class: Drupal\invoice_to_client\Form\OrganizationInfo
+    arguments: ['@entity_type.manager', '@messenger', '@database']
+
+  invoice_to_client.form.edit_organization_info:
+    class: Drupal\invoice_to_client\Form\EditOrganizationInfo
+    arguments: ['@entity_type.manager', '@messenger', '@database']
+
+  invoice_to_client.file_url_generator:
+    class: Drupal\Core\File\FileUrlGenerator

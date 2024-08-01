@@ -1,0 +1,11 @@
+services:
+  qrcode.repository:
+    class: Drupal\qrcode\QRCodeRepository
+    arguments: ['@entity_type.manager', '@database']
+    tags:
+      - { name: backend_overridable }
+  qrcode.request_subscriber:
+    class: Drupal\qrcode\EventSubscriber\QRCodeRequestSubscriber
+    arguments: ['@qrcode.repository', '@path_processor_manager']
+    tags:
+      - { name: event_subscriber }

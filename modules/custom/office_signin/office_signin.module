@@ -1,0 +1,106 @@
+<?php
+
+use Drupal\webform\Entity\WebformSubmission;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_menu().
+ */
+function office_signin_menu() {
+  $items = [];
+
+  $items['office-sign-in-results'] = [
+    'title' => 'Office Sign-In Results',
+    'page callback' => 'office_signin_results_page',
+    'access callback' => 'office_signin_results_access',
+    'type' => MENU_NORMAL_ITEM,
+  ];
+
+  return $items;
+}
+
+/**
+ * Page callback to display the results.
+ */
+function office_signin_results_page() {
+  // Load the webform submissions.
+  $submissions = WebformSubmission::loadMultiple();
+
+  // Build the table header.
+  $header = [
+    'date' => t('Date'),
+    'name' => t('Name'),
+    'email' => t('Email'),
+    'phone_number' => t('Phone Number'),
+    'meeting' => t('Who are you meeting?'),
+    'qr_code' => t('QR Code'),
+  ];
+
+  // Build the rows.
+  $rows = [];
+  foreach ($submissions as $submission) {
+    $data = $submission->getData();
+    $rows[] = [
+      'date' => format_date($submission->getCreatedTime(), 'custom', 'Y-m-d H:i:s'),
+      'name' => $data['name'],
+      'email' => $data['email'],
+      'phone_number' => $data['phone_number'],
+      'meeting' => $data['meeting'],
+      'qr_code' => [
+        'data' => [
+          '#theme' => 'image',
+          '#uri' => $data['qr_code_path'],
+          '#alt' => t('QR Code'),
+        ],
+      ],
+    ];
+  }
+
+  // Build the table.
+  $build = [
+    '#theme' => 'table',
+    '#header' => $header,
+    '#rows' => $rows,
+    '#attributes' => [
+      'class' => ['responsive-table'],
+    ],
+  ];
+
+  return $build;
+}
+
+/**
+ * Access callback for the results page.
+ *
+ * @return bool
+ *   TRUE if the user has access, FALSE otherwise.
+ */
+function office_signin_results_access() {
+  return \Drupal::currentUser()->isAuthenticated();
+}
+
+/**
+ * Implements hook_menu_links_discovered_alter().
+ */
+function office_signin_menu_links_discovered_alter(array &$links) {
+  // Target the specific menu link by its title.
+  foreach ($links as $key => &$link) {
+    if ($link['title'] == 'Office Sign-In') {
+      // Add a custom access callback for the "Office Sign-In" link.
+      $link['options']['alter']['path_conditions'] = [
+        'callable' => 'office_signin_check_access',
+      ];
+    }
+  }
+}
+
+/**
+ * Custom access check function.
+ *
+ * @return bool
+ *   TRUE if the user has access, FALSE otherwise.
+ */
+function office_signin_check_access() {
+  // Check if the user is authenticated.
+  return \Drupal::currentUser()->isAuthenticated();
+}

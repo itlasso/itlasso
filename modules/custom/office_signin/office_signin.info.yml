@@ -1,0 +1,8 @@
+name: 'Office Sign-In'
+type: module
+description: 'A custom module for office sign-in with QR code generation and results display.'
+core_version_requirement: ^10
+package: Custom
+dependencies:
+  - drupal/webform
+  - drupal/qrcode

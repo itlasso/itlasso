@@ -1,0 +1,7 @@
+support_ticket.form:
+  path: '/support-ticket/form'
+  defaults:
+    _form: 'Drupal\support_ticket\Form\SupportTicketForm'
+    _title: 'Support Ticket Form'
+  requirements:
+    _permission: 'access content'

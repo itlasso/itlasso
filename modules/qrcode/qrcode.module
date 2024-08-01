@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Module file for qrcode.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_entity_operation_alter().
+ */
+function qrcode_entity_operation_alter(array &$operations, EntityInterface $entity) {
+  if ($entity->getEntityTypeId() === 'qrcode') {
+    $downloadUrl = Url::fromRoute('entity.qrcode.download', ['qrcode' => $entity->id()]);
+    $operations['qrcode_download'] = [
+      'title' => t('Download'),
+      'weight' => 20,
+      'url' => $downloadUrl,
+    ];
+  }
+}

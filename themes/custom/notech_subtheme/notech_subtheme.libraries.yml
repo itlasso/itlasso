@@ -1,0 +1,9 @@
+notech_subtheme.skin.default:
+   version: VERSION
+   header: true
+   css:
+      theme:
+         css/style.css: {}
+         https://fonts.googleapis.com/css?family=BrunoAceSC: { type: external }
+   js:
+      js/main.js: {}

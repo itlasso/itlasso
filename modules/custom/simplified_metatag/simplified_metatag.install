@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function simplified_metatag_install() {
+  // Set default configurations for content, Facebook, and Twitter meta tags.
+  \Drupal::configFactory()->getEditable('metatag.metatag_defaults.node')
+    ->set('tags', [
+      'description' => '[node:summary]',
+      'og_image' => '[node:field_image]',
+      'twitter_card' => 'summary',
+    ])
+    ->save();
+}

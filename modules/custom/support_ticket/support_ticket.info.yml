@@ -1,0 +1,9 @@
+name: 'Support Ticket'
+type: module
+description: 'Provides a support ticket form inside a block.'
+core_version_requirement: ^10
+package: Custom
+dependencies:
+  - drupal:block
+version: '1.0'
+project: 'support_ticket'

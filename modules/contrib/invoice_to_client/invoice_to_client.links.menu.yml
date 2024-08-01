@@ -1,0 +1,59 @@
+invoice_to_client.admin:
+  title: 'Invoice service'
+  parent: system.admin
+  route_name: invoice.index
+  weight: 21
+
+invoice_to_client.employees_list:
+  title: 'All employees list'
+  parent: invoice_to_client.admin
+  route_name: show_employee
+  weight: 1
+
+invoice_to_client.client_list:
+  title: 'All client list'
+  parent: invoice_to_client.admin
+  route_name: show_client
+  weight: 2
+
+invoice_to_client.add_employee:
+  title: 'Add new employee'
+  parent: invoice_to_client.admin
+  route_name: add_employee_form
+  weight: 3
+
+invoice_to_client.add_client:
+  title: 'Add new client'
+  parent: invoice_to_client.admin
+  route_name: add_client_form
+  weight: 4
+
+invoice_to_client.client_employee_allocation:
+  title: 'Allocate employee to client'
+  parent: invoice_to_client.admin
+  route_name: allocate_emp_to_client
+  weight: 5
+
+invoice_to_client.Generte_invoice:
+  title: 'Generate Invoice'
+  parent: invoice_to_client.admin
+  route_name: generateInvoice_form
+  weight: 6
+
+invoice_to_client.invoice_list:
+  title: 'See Invoice list'
+  parent: invoice_to_client.admin
+  route_name: companies_invoice.table
+  weight: 7
+
+invoice_to_client.add_org_info:
+  title: 'Add your Organization detail'
+  parent: invoice_to_client.admin
+  route_name: organiztion_info_form
+  weight: 8
+
+invoice_to_client.org_detail:
+  title: 'Organization data'
+  parent: invoice_to_client.admin
+  route_name: organiztion_info_display
+  weight: 9

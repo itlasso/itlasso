@@ -1,0 +1,7 @@
+name: 'Simplified MetaTag Configuration'
+type: module
+description: 'Provides simplified configurations for the MetaTag module.'
+core_version_requirement: ^10
+package: Custom
+dependencies:
+  - metatag:metatag

@@ -1,0 +1,299 @@
+header .site-branding-logo {
+  padding: 0px 0 0px;
+  display: inline-block;
+  height: auto;
+}
+.body-font-color {
+  color: #515151 !important;
+}
+.header-one {
+  position: relative;
+  background: #ed1c24;
+  z-index: 99;
+  -webkit-box-shadow: 0 0 10px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px 4px rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.navigation .gva_menu > li > a {
+  display: block;
+  position: relative;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 35px 18px;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+  text-align: center;
+  color: #ffffff;
+  font-family: var(--notech-heading-font-family);
+}
+
+.navigation .gva_menu > li > a:hover {
+  color: #000000;
+}
+
+.navigation .gva_menu > li > a > span:first-child:before {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #000000;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+}
+.navigation .gva_menu > li.menu-item--active-trail > a {
+  color: #000000 !important;
+}
+.gavias_sliderlayer .inner.btn-slide, .gavias_sliderlayer .btn-slide a, #gavias_slider_single .inner.btn-slide, #gavias_slider_single .btn-slide a {
+    font-size: 16px;
+    background: #e50000;
+    color: #fff;
+}
+
+.bg-theme {
+  background: #000000;
+}
+#block-breadcrumbs {
+background-image: url(/themes/custom/notech_subtheme/images/breadcrumbs-2.jpg);
+}
+.container, .container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.breadcrumb-content-inner .gva-block-breadcrumb .breadcrumb-links nav.breadcrumb ol li a {
+    color: #bebebe;
+    font-size: 18px;
+}
+.breadcrumb-content-inner .gva-block-breadcrumb .breadcrumb-links nav.breadcrumb ol li {
+  float: left;
+  font-weight: 700;
+  color: #bebebe;
+  font-size: 18px;
+}
+.gsc-images-parallax.style-v1 .content-box {
+  background: #8a8a8a;
+  color: #fff;
+}
+.gsc-images-parallax.style-v1 .content-box:after {
+  border-right-color: #8a8a8a;
+}
+.iconbox-four__icon {
+  font-size: 62px;
+  color: #d90202;
+  margin-right: 20px;
+}
+.iconbox-one__icon-inner {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #8b8b8b;
+  color: #fff;
+}
+
+.el-89019105 > .bb-inner {
+  padding-top: 40px !important;
+  padding-bottom: 60px !important;
+}
+.feature-two__content {
+  padding: 25px 30px 25px;
+  text-align: center;
+  -webkit-box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.07);
+  box-shadow: 0px 10px 30px 0px rgb(0 0 0 / 18%);
+  margin-bottom: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: -50px;
+  position: relative;
+  z-index: 9;
+  background: #fff;
+}
+.gsc-heading__sub-title > span:before {
+  background: #000000;
+}
+.gsc-heading__sub-title > span:after {
+  background: #000000;
+}
+.contact-info ul li i {
+  color: #d90202;
+  width: 20px;
+  margin-right: 10px;
+}
+.webform-submission-form .form-item input {
+    line-height: 45px;
+    background: #ccc;
+}
+
+.team-two__content {
+  -webkit-box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.05);
+  box-shadow: 0px 10px 20px 0px rgb(0 0 0 / 14%);
+}
+#footer {
+  color: var(--footer-color);
+  font-size: var(--footer-color);
+  background: url(/themes/custom/notech/assets/images/bg-footer.png) no-repeat left top #003f4c;
+  background-size: cover;
+}
+.header-title {
+  display: none;
+}
+.block .block-title:before {
+  display: none;
+}
+.block .block-title {
+  font-size: 46px;
+  color: #d90202;
+  text-align: center;
+}
+.capa-logo {
+  max-width: 300px;
+  padding-top: 20px;
+}
+.about-image {
+  padding-top: 50px;
+}
+iframe {
+  border: 0;
+  width: 100%;
+}
+.el-custom-content.style-white a {
+  border-bottom: 2px solid #d90202;
+}
+.gav-help-region .container {
+  padding-bottom: 0px;
+}
+.topbar__content {
+  color: #545454;
+}
+.capability-titles {
+  background-color: #d90202;
+  color: #ffffff;
+  margin-top: 40px;
+}
+.expertise-title {
+  background-color: #d90202;
+  color: #ffffff;
+  margin-top: 40px;
+}
+.naics-title {
+  background-color: #d90202;
+  color: #ffffff;
+  margin-top: 40px;
+}
+.container, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
+  max-width: 1350px;
+}
+
+.ckeditor-accordion-container > dl dt > a, .ckeditor-accordion-container > dl dt > a:not(.button) {
+  display: block;
+  padding: 5px 10px 5px 50px;
+  background-color: #004d5e;
+  color: #fff;
+  border-bottom: 1px solid #000000;
+}
+.ckeditor-accordion-container > dl dt > a, .ckeditor-accordion-container > dl dt > a:not(.button):hover {
+  display: block;
+  padding: 5px 10px 5px 50px;
+  background-color: #000000;
+  color: #fff;
+  border-bottom: 1px solid #000000;
+}
+.svg-inline--fa {
+  display: var(--fa-display,inline-block);
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+  color: #000000;
+}
+.ckeditor-accordion-container > dl {
+  position: relative;
+  border: 1px solid #d4d5d6;
+}
+.block-layout-builder {
+  padding-top: 30px;
+}
+.hosting-solutions-col, h3 {
+  color: #d90202;
+  font-size: 1.4rem;
+}
+.hosting-solution-col {
+  padding: 20px 20px 0 20px;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+  margin: 10px;
+  background-color: #f3f3f3;
+  height: 1060px;
+}
+.hosting-solution-col:hover {
+  background-color: #ffffff;
+}
+#edit-submit--2:hover {
+  background: #000000;
+  color: #ffffff;
+}
+.business-from__btn:hover {
+  background: #000000;
+  color: #ffffff;
+}
+.site-footer__btn:hover {
+  background: #000000;
+  color: #ffffff;
+}
+.gbb-row .bb-inner {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+.mobile-app-padding {
+  padding-top: 40px;
+}
+.services-list-position {
+  padding-left: 20px;
+}
+
+/* Define the animation keyframes */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-5px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(5px);
+  }
+}
+
+/* Apply the animation to the "shake" class */
+.shake {
+  animation: shake 5.5s infinite; /* Adjust the duration and iteration as needed */
+}
+.phone-widget {
+  max-width: 85px;
+  float: right;
+}
+.copyright-region {
+  background-color: #000000;
+  max-height: 140px;
+}
+.fa-facebook {
+  color: #0080e0;
+}
+.fa-twitter {
+  color: #38acf2;
+}
+.fa-linkedin {
+  color: #0f77c0;
+}
+.copyright-info {
+  padding-top: 30px;
+}
+.banner-one__image {
+    opacity: 1;
+}
+

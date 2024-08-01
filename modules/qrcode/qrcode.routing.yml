@@ -1,0 +1,59 @@
+qrcode.list:
+  path: '/admin/config/services/qrcode'
+  defaults:
+    _entity_list: 'qrcode'
+    _title: 'QRCodes'
+  requirements:
+    _permission: 'administer qrcodes'
+
+entity.qrcode.canonical:
+  path: '/admin/config/services/qrcode/edit/{qrcode}'
+  defaults:
+    _entity_form: 'qrcode.edit'
+    _title: 'Edit QRCode'
+  requirements:
+    _entity_access: 'qrcode.update'
+
+entity.qrcode.download:
+  path: '/admin/config/services/qrcode/download/{qrcode}'
+  defaults:
+    _controller: '\Drupal\qrcode\Controller\QRCodeController::download'
+    _title: 'Download QRCode'
+  requirements:
+    _permission: 'administer qrcodes'
+  options:
+    parameters:
+      qrcode:
+        type: entity:qrcode
+
+qrcode.add:
+  path: '/admin/config/services/qrcode/add'
+  defaults:
+    _entity_form: 'qrcode.default'
+    _title: 'Add URL qrcode'
+  requirements:
+    _entity_create_access: 'qrcode'
+
+entity.qrcode.edit_form:
+  path: '/admin/config/services/qrcode/edit/{qrcode}'
+  defaults:
+    _entity_form: 'qrcode.edit'
+    _title: 'Edit qrcode'
+  requirements:
+    _entity_access: 'qrcode.update'
+
+entity.qrcode.delete_form:
+  path: '/admin/config/services/qrcode/delete/{qrcode}'
+  defaults:
+    _entity_form: 'qrcode.delete'
+    _title: 'Delete URL qrcode'
+  requirements:
+    _entity_access: 'qrcode.delete'
+
+qrcode.settings:
+  path: '/admin/config/services/qrcode/settings'
+  defaults:
+    _form: '\Drupal\qrcode\Form\QRCodeSettingsForm'
+    _title: 'Settings'
+  requirements:
+    _permission: 'administer qrcode settings'

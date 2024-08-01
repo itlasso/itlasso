@@ -1,0 +1,28 @@
+# Schema for the configuration files of the tawk_to module.
+tawk_to.settings:
+  type: config_object
+  mapping:
+    tawk_to_widget_page_id:
+      type: string
+      label: 'Tawk.to widget page ID'
+    tawk_to_widget_id:
+      type: string
+      label: 'Tawk.to widget ID'
+    visibility:
+      type: sequence
+      label: 'Visibility Conditions'
+      sequence:
+        type: condition.plugin.[id]
+        label: 'Visibility Condition'
+    show_user_name:
+      type: boolean
+      label: 'Show user name'
+    user_name:
+      type: string
+      label: 'User name'
+    show_user_email:
+      type: boolean
+      label: 'Show user email'
+    user_email:
+      type: string
+      label: 'User email'

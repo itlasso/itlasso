@@ -1,0 +1,22 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.grid-full {
+  grid-template-columns: auto !important;
+  display: block !important;
+}
+.form-text {
+  max-width: none !important;
+}
+
+:root {
+  --sp: 11px !important;
+  font-family: sans-serif;
+}
+.select-fields {
+  padding-right: var(--bs-gutter-x, 5.75rem) !important;
+  padding-left: var(--bs-gutter-x, 5.75rem) !important;
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+}

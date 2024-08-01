@@ -1,0 +1,231 @@
+invoice.index:
+  path: 'invoice/links'
+  defaults:
+    _controller: '\Drupal\invoice_to_client\Controller\InvoiceIndex::listOfLinks'
+    _title: 'List of all links'
+  requirements:
+    _permission: 'administer invoice_to_client'
+  options:
+    no_cache: 'TRUE'
+
+hour_based.invoice:
+  path: 'hour_based/invoice_form'
+  defaults:
+    _form: '\Drupal\invoice_to_client\Form\HourBasedForm'
+    _title: 'fetch table based on hourly pay'
+  requirements:
+    _permission: 'administer invoice_to_client'
+  options:
+    no_cache: 'TRUE'
+
+month_based.invoice:
+  path: 'month_based/invoice_form'
+  defaults:
+    _form: '\Drupal\invoice_to_client\Form\MonthBasedForm'
+    _title: ' fetch table based on monthly pay table'
+  requirements:
+    _permission: 'administer invoice_to_client'
+  options:
+    no_cache: 'TRUE'
+
+invoice_select:
+  path: 'select_method'
+  defaults:
+    # _form: '\Drupal\invoice_to_client\Form\SelectForm'
+    _controller: '\Drupal\invoice_to_client\Controller\DisplayEmployees::showdata'
+    _title: 'Select price label type'
+  requirements:
+    _permission: 'administer invoice_to_client'
+  options:
+    no_cache: 'TRUE'
+
+company_invoice.pdf:
+  path: 'company_invoice_controller'
+  defaults:
+    _controller: '\Drupal\invoice_to_client\Controller\CompanyInvoiceController::index'
+    _title: 'company invoice'
+  requirements:
+    _permission: 'administer invoice_to_client'
+  options:
+     no_cache: 'TRUE'
+
+employees_table_display:
+  path: 'employees/display'
+  defaults:
+    _controller: '\Drupal\invoice_to_client\Controller\DisplayEmployees::showdata'
+    _title: 'table'
+  requirements:
+    _permission: 'administer invoice_to_client'
+  options:
+    no_cache: 'TRUE'
+
+companies_invoice.table:
+  path: 'company_invoice-list'
+  defaults:
+    _controller: '\Drupal\invoice_to_client\Controller\InvoiceTable::showInvoice'
+    _title: 'invoice-client list'
+  requirements:
+    _permission: 'administer invoice_to_client'
+  options:
+    no_cache: 'TRUE'
+
+add_employee_form:
+  path: 'add/employee'
+  defaults:
+    _form: '\Drupal\invoice_to_client\Form\AddEmp'
+    _title: 'add new employee'
+  requirements:
+    _permission: 'administer invoice_to_client'
+  options:
+    no_cache: 'TRUE'
+
+add_client_form:
+  path: 'add/client'
+  defaults:
+    _form: '\Drupal\invoice_to_client\Form\AddClient'
+    _title: 'Add new client'
+  requirements:
+    _permission: 'administer invoice_to_client'
+  options:
+    no_cache: 'TRUE'
+
+allocate_emp_to_client:
+  path: 'allocate/client_emp'
+  defaults:
+    _form: '\Drupal\invoice_to_client\Form\Allocate'
+    _title: 'Allocate client and employee'
+  requirements:
+    _permission: 'administer invoice_to_client'
+  options:
+    no_cache: 'TRUE'
+
+show_employee:
+  path: 'see/employees'
+  defaults:
+    _controller: '\Drupal\invoice_to_client\Controller\ShowEmployee::showdata'
+    _title: 'See All employee list'
+  requirements:
+    _permission: 'administer invoice_to_client'
+  options:
+    no_cache: 'TRUE'
+
+show_client:
+  path: 'see/clients'
+  defaults:
+    _controller: '\Drupal\invoice_to_client\Controller\ShowClient::showdata'
+    _title: 'See All Clients list'
+  requirements:
+    _permission: 'administer invoice_to_client'
+  options:
+    no_cache: 'TRUE'
+
+edit_employee_form:
+  path: 'edit/employee'
+  defaults:
+    _form: '\Drupal\invoice_to_client\Form\EditEmployee'
+    _title: 'Edit employee record'
+  requirements:
+    _permission: 'administer invoice_to_client'
+  options:
+    no_cache: 'TRUE'
+
+edit_client_form:
+  path: 'edit/client'
+  defaults:
+    _form: '\Drupal\invoice_to_client\Form\EditClient'
+    _title: 'Edit Client record'
+  requirements:
+    _permission: 'administer invoice_to_client'
+  options:
+    no_cache: 'TRUE'
+
+allocation_form:
+  path: 'allocate/client-employee'
+  defaults:
+    _form: '\Drupal\invoice_to_client\Form\Allocate'
+    _title: 'client employee allocation'
+  requirements:
+    _permission: 'administer invoice_to_client'
+  options:
+    no_cache: 'TRUE'
+
+generateInvoice_form:
+  path: 'generate/invoice'
+  defaults:
+    _form: '\Drupal\invoice_to_client\Form\GenerateInvoice'
+    _title: 'Generate Invoice'
+  requirements:
+    _permission: 'administer invoice_to_client'
+  options:
+    no_cache: 'TRUE'
+
+editAllocation_form:
+  path: 'edit/allocation'
+  defaults:
+    _form: '\Drupal\invoice_to_client\Form\EditAllocation'
+    _title: 'Edit Allocation'
+  requirements:
+    _permission: 'administer invoice_to_client'
+  options:
+    no_cache: 'TRUE'
+
+delete_employee:
+  path: 'delete/employee'
+  defaults:
+    _controller: '\Drupal\invoice_to_client\Controller\DeleteEmployee::delete'
+    _title: 'remove employee'
+  requirements:
+    _permission: 'administer invoice_to_client'
+  options:
+    no_cache: 'TRUE'
+
+delete_client:
+  path: 'delete/client'
+  defaults:
+    _controller: '\Drupal\invoice_to_client\Controller\DeleteClient::delete'
+    _title: 'remove Client'
+  requirements:
+    _permission: 'administer invoice_to_client'
+  options:
+    no_cache: 'TRUE'
+
+delete_allocation:
+  path: 'delete/allocation'
+  defaults:
+    _controller: '\Drupal\invoice_to_client\Controller\DeleteAllocation::delete'
+    _title: 'remove Allocation'
+  requirements:
+    _permission: 'administer invoice_to_client'
+  options:
+    no_cache: 'TRUE'
+
+organiztion_info_form:
+  path: 'organization/info'
+  defaults:
+    _form: '\Drupal\invoice_to_client\Form\OrganizationInfo'
+    _title: 'Add Organization Information'
+  requirements:
+    _permission: 'administer invoice_to_client'
+  options:
+    no_cache: 'TRUE'
+
+organiztion_info_display:
+  path: 'organization_info/display'
+  defaults:
+    _controller: '\Drupal\invoice_to_client\Controller\DisplayOrganizationInfo::orgData'
+    _title: 'Organization Data'
+  requirements:
+    _permission: 'administer invoice_to_client'
+  options:
+    no_cache: 'TRUE'
+
+organiztion_info_edit:
+  path: 'organization_info/update'
+  defaults:
+    _form: '\Drupal\invoice_to_client\Form\EditOrganizationInfo'
+    _title: 'Update organization Data'
+  requirements:
+    _permission: 'administer invoice_to_client'
+  options:
+    no_cache: 'TRUE'
+

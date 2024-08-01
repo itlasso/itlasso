@@ -1,0 +1,12 @@
+name: InvoiceToClient
+type: module
+description: Module for implementing custom form for Generating invoice form.
+core_version_requirement: ^8.8 || ^9 || ^10
+package: custom
+
+libraries:
+  - invoice_to_client/invoice_to_client
+# Information added by Drupal.org packaging script on 2023-10-31
+version: '1.0.1'
+project: 'invoice_to_client'
+datestamp: 1698749588

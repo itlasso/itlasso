@@ -1,0 +1,7 @@
+name: 'Web Visitors Into Leads'
+type: module
+description: 'Capture visitors’ Name, Email, and Phone Number.'
+core_version_requirement: ^10
+package: Custom
+dependencies:
+  - drupal:field

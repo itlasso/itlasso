@@ -1,0 +1,5 @@
+administer qrcodes:
+  title: 'Administer qrcodes'
+
+administer qrcode settings:
+  title: 'Administer qrcode settings'

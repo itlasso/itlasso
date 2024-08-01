@@ -1,0 +1,5 @@
+qrcode.add:
+  route_name: qrcode.add
+  title: 'Add QRCode'
+  appears_on:
+    - 'qrcode.list'

@@ -1,0 +1,39 @@
+<form{{ attributes }}>
+  <div class="form-item">
+    {{ form.date.label }}
+    {{ form.date }}
+  </div>
+  <div class="form-item">
+    {{ form.company_name.label }}
+    {{ form.company_name }}
+  </div>
+  <div class="form-item">
+    {{ form.name.label }}
+    {{ form.name }}
+  </div>
+  <div class="form-item">
+    {{ form.email.label }}
+    {{ form.email }}
+  </div>
+  <div class="form-item">
+    {{ form.phone_number.label }}
+    {{ form.phone_number }}
+  </div>
+  <div class="form-item">
+    {{ form.service_issue.label }}
+    {{ form.service_issue }}
+  </div>
+  <div class="form-item">
+    {{ form.issue_description.label }}
+    {{ form.issue_description }}
+  </div>
+  <div class="form-item">
+    {{ form.file_upload.label }}
+    {{ form.file_upload }}
+    <div class="file-upload-description">{{ form.file_upload['#description'] }}</div>
+  </div>
+  <div class="form-actions">
+    {{ form.actions.submit }}
+  </div>
+  {{ form|without('date', 'company_name', 'name', 'email', 'phone_number', 'service_issue', 'issue_description', 'file_upload', 'actions.submit') }}
+</form>

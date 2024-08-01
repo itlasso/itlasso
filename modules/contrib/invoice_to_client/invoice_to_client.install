@@ -1,0 +1,309 @@
+<?php
+
+use Drupal\Core\Database\Database;
+
+/**
+ * Implements hook_schema().
+ */
+function invoice_to_client_schema(){
+  $schema['invoice_table'] = [
+    'description' => 'Invoice record',
+    'fields' => [
+      'id' => [
+        'description' => 'Id',
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'Invoice_number' => [
+        'description' => 'Invoice number',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'Client_id' => [
+        'description' => 'Client Id',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'Month' => [
+        'description' => 'Month of Invoice',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'Year' => [
+        'description' => 'Year of invoice',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'Invoice_date' => [
+        'description' => 'Invoice date',
+        'type' => 'varchar',
+        'mysql_type' => 'date',
+        'not null' => TRUE,
+      ],
+
+      'Employee_id' => [
+        'description' => 'Employee Id',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+
+      'Employee_name' => [
+        'description' => 'Employee name',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'Price' => [
+        'description'=> 'Price per month',
+        'type' => 'varchar',
+        'length'=> 100,
+        'not null' => TRUE,
+      ],
+      'Working_days' => [
+        'description' => 'Total working days of the month',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'Days_or_hours_worked' => [
+        'description' => 'Days Or hours worked by employee',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+      ],
+      'Amount' => [
+        'description' => 'Amount payed for a month',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+      ],
+      'GST_status' => [
+        'description' => 'GST status',
+        'type' => 'varchar',
+        'length' => 20,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+  // employee table
+  $schema['employee_table'] = [
+    'description' => 'Employee record ',
+    'fields' => [
+      'id' => [
+        'description' => 'Id',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'employee_name' => [
+        'description' => 'Employee name',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'emp_id' => [
+        'description' => 'Employee Id',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+    ],
+      'primary key' => ['id',],
+  ];
+  // client table
+  $schema['client_table'] = [
+    'description' => 'Client record ',
+    'fields' => [
+      'id' => [
+        'description' => 'Id',
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'client_name' => [
+        'description' => 'client name',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'pan_or_tin' => [
+        'description' => 'PAN OR TIN Number',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'gstin' => [
+        'description' => 'GSTIN',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'address' => [
+        'description' => 'Address of client',
+        'type' => 'varchar',
+        'length' => 400,
+        'not null' => TRUE,
+      ],
+      'contact_person_name' => [
+        'description' => 'Contact person name',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'contact_person_email' => [
+        'description' => 'Contact person email',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+      'contact_person_phone' => [
+        'description' => 'Contact person phone',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+  //  allocation table
+  $schema['allocation_table'] = [
+   'description' => 'Client and Employee allocation ',
+   'fields' => [
+      'id' => [
+        'description' => 'Id',
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'emp_serial_id' => [
+        'description' => 'Employee serial id',
+        'type' => 'int',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+        'default' => 0,
+      ],
+      'client_serial_id' => [
+        'description' => 'Client serial id',
+        'type' => 'int',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'price' => [
+        'description' => 'Employee price/hour or /month',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+  //Organization Information
+  $schema['organization_info_table'] = [
+    'description' => 'Organization Information',
+    'fields' => [
+      'id' => [
+        'description' => 'Id',
+        'type' => 'serial',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ],
+      'organization_name' => [
+        'description' => 'Organization name',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+      ],
+      'address' => [
+        'description' => 'Address',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+      ],
+      'postal_code' => [
+        'description' => 'Postal code',
+        'type' => 'varchar',
+        'length' => 10,
+        'not null' => TRUE,
+      ],
+      'work_location' => [
+        'description' => 'Work location',
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => TRUE,
+      ],
+      'account_holder_name' => [
+        'description' => 'Account holder name',
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => TRUE,
+      ],
+      'bank_name' => [
+        'description' => 'Name of the bank',
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => TRUE,
+      ],
+      'bank_branch_name' => [
+        'description' => 'Bank branch name',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => TRUE,
+      ],
+      'account_number' => [
+        'description' => 'Account number',
+        'type' => 'varchar',
+        'length' => 20,
+        'not null' => TRUE,
+      ],
+      'ifsc_code' => [
+        'description' => 'IFSC code',
+        'type' => 'varchar',
+        'length' => 20,
+        'not null' => TRUE,
+      ],
+      'pan_number' => [
+        'description' => 'PAN number',
+        'type' => 'varchar',
+        'length' => 20,
+        'not null' => TRUE,
+      ],
+      'email' => [
+        'description' => 'Email',
+        'type' => 'varchar',
+        'length' => 30,
+        'not null' => TRUE,
+      ],
+      'website_name' => [
+        'description' => 'Website name',
+        'type' => 'varchar',
+        'length' => 60,
+        'not null' => TRUE,
+      ],
+      'gstin' => [
+        'description' => 'GSTIN',
+        'type' => 'varchar',
+        'length' => 30,
+        'not null' => TRUE,
+      ],
+      'organization_logo' => [
+        'description' => 'Logo image',
+        'type' => 'varchar',
+        'default' => '',
+        'length' => 255,
+      ],
+    ],
+    'primary key' => ['id'],
+    'unique keys' => [
+      'gstin' => ['gstin'],
+    ],
+  ];
+  return $schema;
+}

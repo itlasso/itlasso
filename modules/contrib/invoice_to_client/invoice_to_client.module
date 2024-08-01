@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * Implements hook_permission().
+ */
+function invoice_to_client_permission() {
+  return [
+    'administer invoice_to_client' => [
+      'title' => t('Administer InvoiceToClient'),
+      'description' => t('Manage settings and content related to the invoice_to_client module.'),
+    ],
+  ];
+}
+
+/**
+ * Custom validation callback for the phone number field.
+ */
+function invoice_to_client_validate_phone_number($element, &$form_state) {
+  $phone_number = $element['#value'];
+  if(!empty($phone_number)) {
+    if (!preg_match('/^[0-9]{10}$/', $phone_number)) {
+      $form_state->setErrorByName('phone', t('Please enter a valid 10-digit phone number.'));
+    }
+  }
+}
+
+function invoice_to_client_website_name_validate($element, &$form_state) {
+  $website_name =  $element['#value'];
+  if (filter_var($website_name, FILTER_VALIDATE_URL)) {
+    return TRUE;
+  }
+  else {
+    $form_state->setErrorByName('website_name', t('Invalid website name. Please check the format.'));
+    return FALSE;
+  }
+}
+
+

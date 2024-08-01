@@ -1,0 +1,10 @@
+name: QRCode
+type: module
+description: Allows users to create and manage qrcodes.
+core_version_requirement: ^9.0 || ^10
+configure: qrcode.list
+
+# Information added by Drupal.org packaging script on 2023-02-24
+version: '1.0.0-alpha3'
+project: 'qrcode'
+datestamp: 1677268870

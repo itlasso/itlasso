@@ -1,0 +1,4 @@
+permissions:
+  view office sign-in results:
+    title: 'View Office Sign-In Results'
+    description: 'Allow users to view the results of the office sign-in form submissions.'

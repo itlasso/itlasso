@@ -1,0 +1,12 @@
+# Schema for the configuration files of the QRCode module.
+
+qrcode.settings:
+  type: config_entity
+  label: 'QRCode settings'
+  mapping:
+    thumbnails_directory:
+      type: string
+      label: 'The directory where qrcode thumbnails will be saved.'
+    enable_direct_urls:
+      type: boolean
+      label: 'Indicates if direct urls are allowed'

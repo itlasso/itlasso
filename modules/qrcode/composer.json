@@ -1,0 +1,12 @@
+{
+    "name": "drupal/qrcode",
+    "type": "drupal-module",
+    "description": "Provides functionality for creating qrcodes",
+    "homepage": "http://drupal.org/project/qrcode",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "php": "^7.3 || ^8.0",
+        "drupal/core": "^9.2 || ^10",
+        "chillerlan/php-qrcode": "^4.3.0"
+    }
+}

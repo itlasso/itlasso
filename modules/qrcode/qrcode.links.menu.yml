@@ -1,0 +1,19 @@
+qrcode.list:
+  title: 'QRCodes'
+  parent: system.admin_config_services
+  description: 'Manage QRCodes'
+  route_name: qrcode.list
+  menu_name: admin
+
+qrcode.add:
+  title: 'Add QRCode'
+  parent: qrcode.list
+  route_name: qrcode.add
+  menu_name: admin
+
+qrcode.settings:
+  title: 'Settings'
+  parent: qrcode.list
+  route_name: qrcode.settings
+  description: 'Configure settings for qrcodes.'
+  menu_name: admin

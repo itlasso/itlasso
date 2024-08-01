@@ -1,0 +1,4 @@
+services:
+  support_ticket.block:
+    class: Drupal\support_ticket\Plugin\Block\SupportTicketBlock
+    arguments: ['@form_builder']

@@ -1,0 +1,11 @@
+<?php
+
+use Drupal\Core\File\FileSystemInterface;
+
+/**
+ * Implements hook_install().
+ */
+function support_ticket_install() {
+  // Create the support_tickets directory in sites/default/files.
+  \Drupal::service('file_system')->prepareDirectory('public://support_tickets', FileSystemInterface::CREATE_DIRECTORY);
+}

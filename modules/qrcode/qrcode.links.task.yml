@@ -1,0 +1,10 @@
+qrcode.list:
+  route_name: qrcode.list
+  base_route: qrcode.list
+  title: QRCodes
+
+qrcode.settings:
+  route_name: qrcode.settings
+  base_route: qrcode.list
+  title: Settings
+  weight: 50

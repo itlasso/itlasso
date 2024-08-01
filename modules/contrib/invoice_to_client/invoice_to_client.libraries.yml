@@ -1,0 +1,11 @@
+invoice_to_client:
+  version: 1.x
+  css:
+    theme:
+      css/invoice.css: {}
+      "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css": { type: external }
+  js:
+    js/custom.js: {}
+  dependencies:
+    - core/jquery.once
+    - core/drupal

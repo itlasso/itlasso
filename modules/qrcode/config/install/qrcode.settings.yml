@@ -1,0 +1,2 @@
+thumbnails_directory: 'public://qrcode_thumbnails'
+enable_direct_urls: true

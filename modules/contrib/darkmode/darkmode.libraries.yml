@@ -1,0 +1,10 @@
+darkmodejs:
+  js:
+    /libraries/darkmode-js/lib/darkmode-js.min.js: {type: external, minified: true}
+initiator:
+  js:
+    js/init.js: {}
+  dependencies:
+    - darkmode/darkmodejs
+    - core/drupal
+    - core/once

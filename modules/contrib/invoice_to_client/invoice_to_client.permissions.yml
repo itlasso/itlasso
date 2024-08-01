@@ -1,0 +1,3 @@
+administer invoice_to_client:
+  title: 'Administer InvoiceToClient'
+  description: 'Manage settings and content related to the invoice_to_client module.'

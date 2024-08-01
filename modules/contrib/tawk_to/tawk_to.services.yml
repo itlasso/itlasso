@@ -1,0 +1,10 @@
+services:
+  tawk_to.condition_plugins_handler:
+    class: Drupal\tawk_to\Service\TawkToConditionPluginsHandler
+    arguments: ['@config.factory', '@context.handler', '@context.repository', '@plugin.manager.condition']
+  tawk_to.cache_manager:
+    class: Drupal\tawk_to\Cache\TawkToCacheManager
+    arguments: ['@tawk_to.condition_plugins_handler']
+  tawk_to.embed_render:
+    class: Drupal\tawk_to\Service\TawkToEmbedRender
+    arguments: ['@config.factory', '@token', '@tawk_to.condition_plugins_handler', '@tawk_to.cache_manager']
