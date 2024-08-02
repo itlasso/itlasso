@@ -1,0 +1,7 @@
+job_details.load:
+  path: '/job-details/{jobId}'
+  defaults:
+    _controller: '\Drupal\job_details\Controller\JobDetailsController::load'
+    _title: 'Job Details'
+  requirements:
+    _permission: 'access content'

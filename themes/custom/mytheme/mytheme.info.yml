@@ -1,0 +1,7 @@
+name: 'My Theme'
+type: theme
+description: 'Custom theme for the career page.'
+core_version_requirement: ^10
+base theme: false
+libraries:
+  - mytheme/career_page

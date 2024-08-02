@@ -1,0 +1,8 @@
+career_page:
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/career-page.js: {}
+  dependencies:
+    - core/jquery
